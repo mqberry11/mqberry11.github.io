@@ -4,7 +4,7 @@
 
 <p>To start, the first project I'm sharing is a <a href="https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3/hub/space-tourism-multipage-website-r5_jnH0bC2">Frontend Mentor Space Tourist Website</a> challenge. This project recommends HTML, CSS and JS. Having no JS on my belt (yet) I am proud I completed the project running into only a handful of difficulties.</p>
 
-<h2>What I Learned</h3>
+<h2>What I Learned</h2>
 <ul>
   <li><strong>Keep 'css.styles' organized</strong></li>
   <p>Halfway through the project I did a complete rehaul on the CSS code. Afterward navigating the css code was a breeze.</p>
