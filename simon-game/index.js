@@ -10,7 +10,7 @@ var clickLock = ["start"]; /*the clickLock prevents players from spamming the ga
 function gameOver() {
   playSound("wrong");
   $("body").addClass("game-over");
-  $("h1").text("Game Over, Press Any Key to Restart");
+  $("h1").text("Game Over, Press Any Key or Click a Button to Restart");
   clearLog(levelLog);
   clearLog(playerLog);
 
@@ -60,17 +60,20 @@ function check() {
   }
 }
 
+function startGame() {
+  $("body").removeClass("game-over");
+  $("h1").text("Level " + levelLog.length);
+  setTimeout(function() {
+    simonSays();
+  }, 1000);
+}
 
 //------Player Initiated Functions------
 
 /*When player presses a keyboard key the game will initiate or restart*/
 $("html").on("keydown", function() {
   if (levelLog.length == 1) {
-    $("body").removeClass("game-over");
-    $("h1").text("Level " + levelLog.length);
-    setTimeout(function() {
-      simonSays();
-    }, 1000);
+    startGame();
   }
 });
 
@@ -87,5 +90,10 @@ $(".btn").on("click", function() {
       }, 250);
       playerLog.push(playerColor);
       check ();
+    } else if (document.querySelector("h1").textContent == "Game Over, Press Any Key or Click a Button to Restart") {
+      startGame();
+    }
+    if (document.querySelector("h1").textContent == "Press A Key or Click a Button to Start") {
+      startGame();
     }
 });
